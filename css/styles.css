@@ -304,6 +304,8 @@ li > p
     height: 100%;
     background-color: rgba(0, 0, 0, 0.20);
 
+    opacity: 1;
+
     transition-property: opacity;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -314,11 +316,14 @@ li > p
     pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+}
+
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 
     height: 581px;
     width: 528px;
@@ -326,6 +331,10 @@ li > p
     border-radius: 4px;
 
     background-color: var(--color-white);
+
+    transform: translate(-50%, -50%) scale(1);
+    transition-duration: 250ms;
+
 }
 
 /* Стилизация кнопки закрытия модального окна */
